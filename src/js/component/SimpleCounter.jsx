@@ -1,20 +1,24 @@
 import React from "react";
-import PropTypes, { element } from "prop-types"
+import PropTypes from "prop-types";
 
 function SimpleCounter(props) { 
-    return ( <div className="bigCounter">
-        <div className="Reloj">
-            ¨{element}
+    return (<div className="bigCounter">
+        <div className="calendar">
+            <i className="far fa-clock"></i>
         </div>
-        <div className=""><h1>0</h1></div>
-        <div><h1>0</h1></div>
-        <div><h1>0</h1></div>
-        <div><h1>0</h1></div>
-        <div><h1>0</h1></div>
-        <div className="seconds"></div>
-
+        <div className="four">{props.digitFour}</div>
+        <div className="three">{props.digitThree}</div>
+        <div className="two">{props.digitTwo}</div>
+        <div className="one">{props.digitOne}</div>
     </div>);
 };
 
-export default SimpleCounter;
+SimpleCounter.propTypes = {
+    digitFour: PropTypes.number,
+    digitThree: PropTypes.number,
+    digitTwo: PropTypes.number,
+    digitOne: PropTypes.number,
+};
 
+
+export default SimpleCounter;

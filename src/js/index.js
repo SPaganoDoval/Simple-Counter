@@ -8,5 +8,21 @@ import "../styles/index.css";
 //import your own components
 import SimpleCounter from "./component/SimpleCounter.jsx";
 
+
+let counter= 0;
+setInterval(function(){
+    const four = Math.floor(counter/1000) % 10;
+    const three = Math.floor(counter/100) % 10;
+    const two = Math.floor(counter/10) % 10;
+    const one = Math.floor(counter) % 10;
+    console.log(four, three, two, one);
+    counter++;
+    ReactDOM.render(<SimpleCounter digitOne={one} digitTwo ={two} digitThree={three} digitFour={four} />, document.querySelector("#app"));
+},1000);
+
+
+
+
+
+
 //render your react application
-ReactDOM.render(<SimpleCounter />, document.querySelector("#app"));
